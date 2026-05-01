@@ -9,16 +9,29 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   MyApp({super.key});
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int _selectedindex = 0;
+
+  void _navigateBottomBar(int index){
+    setState(() {
+      _selectedindex = index;
+    });
+  }
+
+
+
+  
   final List _pages = [
     MainMealPage(),
-
     BreakfestPage(),
-
     TeaPage(),
-
     DrinkPage(),
   ];
 
@@ -37,9 +50,11 @@ class MyApp extends StatelessWidget {
         //   backgroundColor:Colors.transparent,
         // ),
         
-        body: _pages[0],
+        body: _pages[_selectedindex],
         
         bottomNavigationBar: BottomNavigationBar(
+          currentIndex: _selectedindex,
+          onTap: _navigateBottomBar,
           type: BottomNavigationBarType.fixed,
           fixedColor: const Color.fromARGB(255, 107, 73, 186),
           items:[
