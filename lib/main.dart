@@ -24,9 +24,6 @@ class _MyAppState extends State<MyApp> {
       _selectedindex = index;
     });
   }
-
-
-
   
   final List _pages = [
     MainMealPage(),
@@ -35,20 +32,27 @@ class _MyAppState extends State<MyApp> {
     DrinkPage(),
   ];
 
+  final List _appbar = [
+    "正餐",
+    "早餐",
+    "下午茶",
+    "手搖"
+  ];
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: const Color.fromARGB(255, 239, 237, 231),
-        // appBar: AppBar(
-        //   title: Text("今日食咩好"),
-        //   centerTitle: true,
-        //   titleTextStyle: TextStyle(color: Colors.black87, 
-        //   fontWeight:FontWeight.bold,
-        //   fontSize: 22),
-        //   backgroundColor:Colors.transparent,
-        // ),
+        appBar: AppBar(
+          title: Text(_appbar[_selectedindex]),
+          centerTitle: true,
+          titleTextStyle: TextStyle(color: Colors.black87, 
+          fontWeight:FontWeight.bold,
+          fontSize: 22),
+          backgroundColor:Colors.transparent,
+        ),
         
         body: _pages[_selectedindex],
         
