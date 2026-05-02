@@ -3,6 +3,7 @@ import 'package:flutter_fortune_wheel/flutter_fortune_wheel.dart';
 import 'dart:async';
 import 'dart:math';
 
+
 class MainMealPage extends StatefulWidget {
   const MainMealPage({super.key});
 
@@ -12,6 +13,13 @@ class MainMealPage extends StatefulWidget {
 }
 
 class _MainMealPageState extends State<MainMealPage> {
+
+  final MainMealList = [
+  "譚仔",
+  "McDonald",
+  "壽司郎",
+  "Hungry Korean",
+  ];
 
   StreamController<int> controller = StreamController<int>();
 
@@ -29,9 +37,8 @@ class _MainMealPageState extends State<MainMealPage> {
                 selected: controller.stream,
                 animateFirst: false,
                 items: [
-                  FortuneItem(child: Text('Han Solo')),
-                  FortuneItem(child: Text('Yoda')),
-                  FortuneItem(child: Text('Obi-Wan Kenobi')),            
+                  for(var food in MainMealList)
+                  FortuneItem(child: Text(food)),         
                   ],
                 ),
               ),
@@ -43,7 +50,7 @@ class _MainMealPageState extends State<MainMealPage> {
               Center(
                 child: FloatingActionButton(
                   onPressed: (){
-                  int index = Random().nextInt(99);
+                  int index = Random().nextInt(MainMealList.length);
                   controller.add(index);   
             }
             ),
