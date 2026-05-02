@@ -16,6 +16,7 @@ class _MainMealPageState extends State<MainMealPage> {
 
   final MainMealList = [
   "譚仔",
+  "三哥",
   "McDonald",
   "壽司郎",
   "Hungry Korean",
@@ -28,6 +29,7 @@ class _MainMealPageState extends State<MainMealPage> {
     return Scaffold(
         backgroundColor: const Color.fromARGB(255, 239, 237, 231),
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Center(
               child: SizedBox(
@@ -48,7 +50,9 @@ class _MainMealPageState extends State<MainMealPage> {
               ),
 
               Center(
-                child: FloatingActionButton(
+                child: FloatingActionButton.extended(
+                  label: Text("開始"),
+                  backgroundColor: const Color.fromARGB(255, 205, 188, 248),
                   onPressed: (){
                   int index = Random().nextInt(MainMealList.length);
                   controller.add(index);   
