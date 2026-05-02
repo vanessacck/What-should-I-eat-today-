@@ -50,7 +50,7 @@ class _MyAppState extends State<MyApp> {
           centerTitle: true,
           titleTextStyle: TextStyle(color: Colors.black87, 
           fontWeight:FontWeight.bold,
-          fontSize: 22),
+          fontSize: 25),
           backgroundColor:Colors.transparent,
         ),
         
