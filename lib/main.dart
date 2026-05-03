@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_mobile_app/Pages/BreakfestPage.dart';
+import 'package:my_first_mobile_app/Pages/BreakfastPage.dart';
 import 'package:my_first_mobile_app/Pages/DrinkPage.dart';
 import 'package:my_first_mobile_app/Pages/MainMealPage.dart';
 import 'package:my_first_mobile_app/Pages/TeaPage.dart';
@@ -27,7 +27,7 @@ class _MyAppState extends State<MyApp> {
   
   final List _pages = [
     MainMealPage(),
-    BreakfestPage(),
+    BreakfastPage(),
     TeaPage(),
     DrinkPage(),
   ];

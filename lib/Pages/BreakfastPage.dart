@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_mobile_app/LuckyWheel.dart';
 
-class TeaPage extends StatefulWidget {
-  const TeaPage({super.key});
+class BreakfastPage extends StatefulWidget {
+  const BreakfastPage({super.key});
 
   @override
-  State<TeaPage> createState() => _TeaPageState();
+  State<BreakfastPage> createState() => _BreakfestPageState();
 }
 
-class _TeaPageState extends State<TeaPage> {
-  final List TeaList = [
+class _BreakfestPageState extends State<BreakfastPage> {
+  final List BreakfastList = [
     "a",
     "b",
     "c",
@@ -19,7 +19,8 @@ class _TeaPageState extends State<TeaPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: const Color.fromARGB(255, 239, 237, 231),
-        body: LuckyWheel(FoodList: TeaList),
+        body: LuckyWheel(FoodList: BreakfastList)
         );
+      
   }
 }
