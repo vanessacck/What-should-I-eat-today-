@@ -56,6 +56,7 @@ class _LuckyWheelState extends State<LuckyWheel>{
 
               Center(
                 child: FloatingActionButton.extended(
+                  elevation: 0,
                   label: Text("開始"),
                   backgroundColor: const Color.fromARGB(255, 205, 188, 248),
                   onPressed: (){

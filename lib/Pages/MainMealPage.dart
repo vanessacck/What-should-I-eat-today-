@@ -15,8 +15,12 @@ class _MainMealPageState extends State<MainMealPage> {
   final MainMealList = [
   "譚仔",
   "三哥",
-  "McDonald",
+  "M記",
   "壽司郎",
+  "薩莉亞",
+  "八方雲集",
+  "茶記",
+  "KFC"
   ];
 
   @override

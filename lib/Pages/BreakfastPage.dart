@@ -10,9 +10,12 @@ class BreakfastPage extends StatefulWidget {
 
 class _BreakfestPageState extends State<BreakfastPage> {
   final List BreakfastList = [
-    "a",
-    "b",
-    "c",
+    "m記",
+    "茶記",
+    "大家樂",
+    "唐記包點",
+    "太興",
+    "KFC"
   ];
 
   @override

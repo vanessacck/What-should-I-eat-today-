@@ -10,9 +10,11 @@ class TeaPage extends StatefulWidget {
 
 class _TeaPageState extends State<TeaPage> {
   final List TeaList = [
-    "a",
-    "b",
-    "c",
+    "媽咪雞蛋仔",
+    "地茂館",
+    "陳茶館",
+    "金滿堂",
+    "豬隊友"
   ];
 
   @override

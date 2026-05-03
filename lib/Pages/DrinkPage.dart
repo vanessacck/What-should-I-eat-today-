@@ -10,9 +10,14 @@ class DrinkPage extends StatefulWidget {
 
 class _DrinkPageState extends State<DrinkPage> {
   final List DrinkList = [
-    "a",
-    "b",
-    "c",
+    "一芳",
+    "天仁茗茶",
+    "COMEBUYTEA",
+    "貢茶",
+    "功夫茶",
+    "Sharetea",
+    "花斑茶社",
+    "再睡五分鐘"
   ];
 
   @override
