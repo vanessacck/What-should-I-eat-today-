@@ -6,14 +6,9 @@ class BreakfestPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
+    return Scaffold(
         backgroundColor: const Color.fromARGB(255, 239, 237, 231),
-
-        ),
-
-      );
+        );
       
   }
 }
