@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
-class Createnewfood extends StatelessWidget {
-  const Createnewfood({super.key});
+class Dialogbox extends StatelessWidget {
+  final controller;
+  VoidCallback OnSave;
+
+  Dialogbox({
+    super.key,
+    required this.controller,
+    required this.OnSave
+});
 
   @override
   Widget build(BuildContext context) {
@@ -13,6 +20,7 @@ class Createnewfood extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
           TextField(
+            controller: controller,
             decoration: InputDecoration(
               border: OutlineInputBorder(),
               hint: Text("輸入新餐廳"),
@@ -25,7 +33,7 @@ class Createnewfood extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               ElevatedButton(
-                onPressed: (){}, 
+                onPressed: OnSave, 
                 child: Text("確定")),
             ],
           )
