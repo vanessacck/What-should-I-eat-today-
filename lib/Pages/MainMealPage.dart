@@ -39,6 +39,8 @@ class _MainMealPageState extends State<MainMealPage> {
         backgroundColor: const Color.fromARGB(255, 239, 237, 231),
         body: LuckyWheel(FoodList: MainMealList),
         floatingActionButton: FloatingActionButton(
+          elevation: 0,
+          backgroundColor:  const Color.fromARGB(255, 205, 188, 248),
           onPressed: NewMainMeal,
           child: Icon(Icons.add),  
           ),
