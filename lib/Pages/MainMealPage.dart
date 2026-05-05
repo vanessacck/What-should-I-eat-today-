@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:my_first_mobile_app/CreateNewFood.dart';
 import 'package:my_first_mobile_app/LuckyWheel.dart';
+
 
 
 class MainMealPage extends StatefulWidget {
@@ -23,11 +25,23 @@ class _MainMealPageState extends State<MainMealPage> {
   "KFC"
   ];
 
+  void NewMainMeal(){
+  showDialog(
+    context: context, 
+    builder: (context){
+    return Createnewfood();
+  });
+}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: const Color.fromARGB(255, 239, 237, 231),
-        body: LuckyWheel(FoodList: MainMealList)
+        body: LuckyWheel(FoodList: MainMealList),
+        floatingActionButton: FloatingActionButton(
+          onPressed: NewMainMeal,
+          child: Icon(Icons.add),  
+          ),
     );
   }
 }
