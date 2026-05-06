@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_mobile_app/DialogBox.dart';
 import 'package:my_first_mobile_app/LuckyWheel.dart';
 
 class MainMealPage extends StatefulWidget {
@@ -12,8 +11,6 @@ class MainMealPage extends StatefulWidget {
 
 class _MainMealPageState extends State<MainMealPage> {
 
-  final _controller = TextEditingController();
-
   var MainMealList = [
   "譚仔",
   "三哥",
@@ -24,24 +21,6 @@ class _MainMealPageState extends State<MainMealPage> {
   "茶記",
   "KFC"
   ];
-
-  void SaveNewMainMeal(){
-    setState(() {
-      MainMealList.add(_controller.text);
-    });
-    Navigator.of(context).pop();
-    _controller.clear();
-  }
-
-  void CreateNewMainMeal(){
-  showDialog(
-    context: context, 
-    builder: (context){
-    return Dialogbox(
-      controller: _controller,
-      OnSave: SaveNewMainMeal,);
-  });
-}
   
 
   @override
@@ -49,12 +28,6 @@ class _MainMealPageState extends State<MainMealPage> {
     return Scaffold(
         backgroundColor: const Color.fromARGB(255, 239, 237, 231),
         body: LuckyWheel(FoodList: MainMealList),
-        floatingActionButton: FloatingActionButton(
-          elevation: 0,
-          backgroundColor:  const Color.fromARGB(255, 205, 188, 248),
-          onPressed: CreateNewMainMeal,
-          child: Icon(Icons.add),  
-          ),
     );
   }
 }

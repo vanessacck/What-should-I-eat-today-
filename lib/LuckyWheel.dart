@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_fortune_wheel/flutter_fortune_wheel.dart';
 import 'dart:async';
 import 'dart:math';
-
 import 'package:my_first_mobile_app/DialogBox.dart';
 
 class LuckyWheel extends StatefulWidget {
@@ -32,11 +31,13 @@ class _LuckyWheelState extends State<LuckyWheel>{
   final _controller = TextEditingController();
 
   void SaveNewMeal(){
-    setState(() {
+    if (_controller.text.trim() != ""){
+      setState(() {
       FoodItem.add(_controller.text);
-    });
+      });
     Navigator.of(context).pop();
-    _controller.clear();
+    _controller.clear();   
+    }
   }
 
   void CreateNewMeal(){
