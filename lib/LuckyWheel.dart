@@ -3,6 +3,8 @@ import 'package:flutter_fortune_wheel/flutter_fortune_wheel.dart';
 import 'dart:async';
 import 'dart:math';
 
+import 'package:my_first_mobile_app/DialogBox.dart';
+
 class LuckyWheel extends StatefulWidget {
   final List FoodList;
 
@@ -27,6 +29,25 @@ class _LuckyWheelState extends State<LuckyWheel>{
   }
 
   StreamController<int> controller = StreamController<int>();
+  final _controller = TextEditingController();
+
+  void SaveNewMeal(){
+    setState(() {
+      FoodItem.add(_controller.text);
+    });
+    Navigator.of(context).pop();
+    _controller.clear();
+  }
+
+  void CreateNewMeal(){
+  showDialog(
+    context: context, 
+    builder: (context){
+    return Dialogbox(
+      controller: _controller,
+      OnSave: SaveNewMeal,);
+  });
+}
 
   @override
   Widget build(BuildContext context) {
@@ -50,6 +71,7 @@ class _LuckyWheelState extends State<LuckyWheel>{
                 ),
               ),
               ),
+
               const SizedBox(
                 height: 20,
               ),
@@ -65,9 +87,16 @@ class _LuckyWheelState extends State<LuckyWheel>{
             }
             ),
             ),
+            
           ],
         ),
-        
+
+        floatingActionButton: FloatingActionButton(
+          elevation: 0,
+          backgroundColor:  const Color.fromARGB(255, 205, 188, 248),
+          onPressed: CreateNewMeal,
+          child: Icon(Icons.add),  
+          ),
         
         );
       
