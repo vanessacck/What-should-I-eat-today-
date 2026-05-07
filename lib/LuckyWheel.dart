@@ -31,13 +31,12 @@ class _LuckyWheelState extends State<LuckyWheel>{
   final _controller = TextEditingController();
 
   void SaveNewMeal(){
-    if (_controller.text.trim() != ""){
-      setState(() {
-      FoodItem.add(_controller.text);
-      });
-    Navigator.of(context).pop();
-    _controller.clear();   
+    setState(() {
+      FoodItem.add(_controller.text);  
     }
+    );
+    Navigator.of(context).pop();
+    _controller.clear(); 
   }
 
   void CreateNewMeal(){

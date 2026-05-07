@@ -10,21 +10,32 @@ class Dialogbox extends StatelessWidget {
     required this.OnSave
 });
 
+  final _formkey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
       backgroundColor: const Color.fromARGB(255, 205, 188, 248),
       content: Container(
-        height: 120,
-        child: Column(
+        height: 150,
+        child: Form(
+          key: _formkey, 
+          child:
+        Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-          TextField(
+          TextFormField(
             controller: controller,
             decoration: InputDecoration(
               border: OutlineInputBorder(),
-              hint: Text("輸入新餐廳"),
+              hint: Text("輸入新餐廳"), 
             ),
+            autovalidateMode: AutovalidateMode.onUserInteraction,
+            validator: (value) {
+              if  (value == null || value.trim().isEmpty){
+                return "請輸入餐廳";
+              }
+            },
           ),
           SizedBox(
             height: 10,
@@ -33,12 +44,16 @@ class Dialogbox extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               ElevatedButton(
-                onPressed: OnSave, 
+                onPressed: (){
+                if (_formkey.currentState!.validate()){
+                  OnSave();
+                }}, 
                 child: Text("確定")),
             ],
           )
         ],),
 
+      ),
       ),
     );
   }
