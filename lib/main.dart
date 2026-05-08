@@ -1,92 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_mobile_app/Pages/BreakfastPage.dart';
-import 'package:my_first_mobile_app/Pages/DrinkPage.dart';
-import 'package:my_first_mobile_app/Pages/MainMealPage.dart';
-import 'package:my_first_mobile_app/Pages/TeaPage.dart';
+import 'package:my_first_mobile_app/RootPage.dart';
 
 
 void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   MyApp({super.key});
-
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  int _selectedindex = 0;
-
-  void _navigateBottomBar(int index){
-    setState(() {
-      _selectedindex = index;
-    });
-  }
-  
-  final List _pages = [
-    MainMealPage(),
-    BreakfastPage(),
-    TeaPage(),
-    DrinkPage(),
-  ];
-
-  final List _appbar = [
-    "正餐",
-    "早餐",
-    "下午茶",
-    "手搖"
-  ];
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: const Color.fromARGB(255, 239, 237, 231),
-        appBar: AppBar(
-          title: Text(_appbar[_selectedindex]),
-          centerTitle: true,
-          titleTextStyle: TextStyle(color: Colors.black87, 
-          fontWeight:FontWeight.bold,
-          fontSize: 25),
-          backgroundColor:Colors.transparent,
-        ),
-        
-        body: _pages[_selectedindex],
-        
-        bottomNavigationBar: BottomNavigationBar(
-          currentIndex: _selectedindex,
-          onTap: _navigateBottomBar,
-          type: BottomNavigationBarType.fixed,
-          fixedColor: const Color.fromARGB(255, 107, 73, 186),
-          items:[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.dinner_dining),
-              label: "正餐"
-              ),
-
-            BottomNavigationBarItem(
-              icon: Icon(Icons.breakfast_dining),
-              label: "早餐"
-              ),
-
-            BottomNavigationBarItem(
-              icon: Icon(Icons.coffee),
-              label: "下午茶"
-              ),
-
-            BottomNavigationBarItem(
-              icon: Icon(Icons.local_drink),
-              label: "手搖"
-              )
-          ]
-        ),
-
-        ),
-
-      );
-      
+      home: const rootpage(),
+    );  
   }
 }
+

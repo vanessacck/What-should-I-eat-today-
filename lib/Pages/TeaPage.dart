@@ -19,9 +19,6 @@ class _TeaPageState extends State<TeaPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: const Color.fromARGB(255, 239, 237, 231),
-        body: LuckyWheel(FoodList: TeaList),
-        );
+    return LuckyWheel(FoodList: TeaList);
   }
 }

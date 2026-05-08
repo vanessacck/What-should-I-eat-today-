@@ -20,10 +20,7 @@ class _BreakfestPageState extends State<BreakfastPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: const Color.fromARGB(255, 239, 237, 231),
-        body: LuckyWheel(FoodList: BreakfastList)
-        );
+    return  LuckyWheel(FoodList: BreakfastList);
       
   }
 }

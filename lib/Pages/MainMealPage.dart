@@ -25,9 +25,7 @@ class _MainMealPageState extends State<MainMealPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: const Color.fromARGB(255, 239, 237, 231),
-        body: LuckyWheel(FoodList: MainMealList),
-    );
+    return LuckyWheel(FoodList: MainMealList);
+
   }
 }

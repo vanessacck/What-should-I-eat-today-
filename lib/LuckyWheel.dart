@@ -78,6 +78,7 @@ class _LuckyWheelState extends State<LuckyWheel>{
 
               Center(
                 child: FloatingActionButton.extended(
+                  heroTag: null,
                   elevation: 0,
                   label: Text("開始"),
                   backgroundColor: const Color.fromARGB(255, 205, 188, 248),
@@ -92,6 +93,7 @@ class _LuckyWheelState extends State<LuckyWheel>{
         ),
 
         floatingActionButton: FloatingActionButton(
+          heroTag: null,
           elevation: 0,
           backgroundColor:  const Color.fromARGB(255, 205, 188, 248),
           onPressed: CreateNewMeal,
