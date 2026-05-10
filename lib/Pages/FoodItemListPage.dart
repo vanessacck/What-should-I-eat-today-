@@ -12,15 +12,22 @@ class _FooditemlistState extends State<Fooditemlist> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 239, 237, 231),
-      appBar: AppBar(title: Text("Food List"),),
+      appBar: AppBar(
+        title: Text("Food List"),
+        backgroundColor: Colors.transparent,
+        centerTitle: true,
+        ),
       body: 
       ListView(
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(25.0),
             child: Container(
-              height: 100,
-              color: const Color.fromARGB(255, 205, 188, 248),
+              height: 75,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: const Color.fromARGB(255, 205, 188, 248),
+              ),             
             ),
           )
         ],

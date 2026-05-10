@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_mobile_app/LuckyWheel.dart';
+import 'package:my_first_mobile_app/FoodDatabase.dart';
 
 class DrinkPage extends StatefulWidget {
   const DrinkPage({super.key});
@@ -9,20 +10,10 @@ class DrinkPage extends StatefulWidget {
 }
 
 class _DrinkPageState extends State<DrinkPage> {
-  final List DrinkList = [
-    "一芳",
-    "天仁茗茶",
-    "COMEBUYTEA",
-    "貢茶",
-    "功夫茶",
-    "Sharetea",
-    "花斑茶社",
-    "再睡五分鐘"
-  ];
 
   @override
   Widget build(BuildContext context) {
-    return LuckyWheel(FoodList: DrinkList);
+    return LuckyWheel(FoodList: Fooddatabase.allFoodData[3]);
       
   }
 }
