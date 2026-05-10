@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:my_first_mobile_app/FoodDatabase.dart';
+import 'package:my_first_mobile_app/FoodTile.dart';
 
-class Fooditemlist extends StatefulWidget {
-  const Fooditemlist({super.key});
+class Fooditemlist extends StatelessWidget {
+  List currentList;
 
-  @override
-  State<Fooditemlist> createState() => _FooditemlistState();
-}
+  Fooditemlist({
+    super.key, 
+    required this.currentList
+    });
 
-class _FooditemlistState extends State<Fooditemlist> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,20 +20,13 @@ class _FooditemlistState extends State<Fooditemlist> {
         centerTitle: true,
         ),
       body: 
-      ListView(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(25.0),
-            child: Container(
-              height: 75,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: const Color.fromARGB(255, 205, 188, 248),
-              ),             
-            ),
-          )
-        ],
-      )
+      ListView.builder(
+        itemCount: currentList.length,
+        itemBuilder: (context, index){
+        return Foodtile(Fooditem: currentList[index],);
+        }
+        )
+     
     );
   }
 }

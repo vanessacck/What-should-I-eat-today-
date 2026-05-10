@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_first_mobile_app/FoodDatabase.dart';
 import 'package:my_first_mobile_app/Pages/BreakfastPage.dart';
 import 'package:my_first_mobile_app/Pages/DrinkPage.dart';
 import 'package:my_first_mobile_app/Pages/FoodItemListPage.dart';
@@ -83,7 +84,7 @@ class _rootpageState extends State<rootpage> {
               backgroundColor: const Color.fromARGB(255, 205, 188, 248),
               shape: CircleBorder(),
               onPressed: (){
-                Navigator.push(context, MaterialPageRoute( builder: (context) => Fooditemlist()));
+                Navigator.push(context, MaterialPageRoute( builder: (context) => Fooditemlist(currentList: Fooddatabase.allFoodData[_selectedindex],)));
               },
               child: Icon(Icons.edit),
             ),
